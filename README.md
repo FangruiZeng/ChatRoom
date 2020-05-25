@@ -8,7 +8,7 @@
 
 ```bash
 git clone https://github.com/FangruiZeng/ChatRoom.git
-cd RaftChatRoom
+cd ChatRoom
 pip3 install -r requirements.txt
 
 # 启动raft集群，需多于两个节点
