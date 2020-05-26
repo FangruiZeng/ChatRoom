@@ -11,7 +11,7 @@ class DistributedList(object):
 
     def __init__(self, args):
         self.msg_list = ReplList()
-        cfg = SyncObjConf(dynamicMembershipChange=True, bindAddress=args.address)
+        cfg = SyncObjConf(dynamicMembershipChange=True, bindAddress='0.0.0.0:' + args.address.split(':')[-1])
         self._control_port = ReplDict()
         SyncObj(args.address, args.partner, consumers=[self.msg_list, self._control_port], conf=cfg)
         self.args = args
