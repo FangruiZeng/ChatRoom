@@ -158,6 +158,7 @@ async def main():
 if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('-raft_addr')
+    parser.add_argument('-port', default=8080)
     args = parser.parse_args(sys.argv[1:])
     node_manager = NodeManager(args.raft_addr)
-    start_server(partial(main), debug=False, auto_open_webbrowser=True)
+    start_server(partial(main), debug=False, port=args.port)
